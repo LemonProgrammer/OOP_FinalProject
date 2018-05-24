@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
+<<<<<<< HEAD
   <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -8,6 +9,16 @@
       <y>30</y>
       <w>162</w>
       <h>48</h>
+=======
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>224</x>
+      <y>216</y>
+      <w>160</w>
+      <h>40</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Driver
 --
@@ -17,10 +28,17 @@ _+ main(args : String[]) : void_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>96</x>
       <y>108</y>
       <w>516</w>
       <h>252</h>
+=======
+      <x>232</x>
+      <y>280</y>
+      <w>152</w>
+      <h>48</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Game
 --
@@ -34,10 +52,17 @@ _+ main(args : String[]) : void_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>162</x>
       <y>48</y>
       <w>108</w>
       <h>72</h>
+=======
+      <x>296</x>
+      <y>248</y>
+      <w>24</w>
+      <h>48</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>160.0;100.0;160.0;10.0;10.0;10.0</additional_attributes>
@@ -45,43 +70,67 @@ _+ main(args : String[]) : void_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1062</x>
       <y>60</y>
       <w>60</w>
       <h>48</h>
+=======
+      <x>744</x>
+      <y>224</y>
+      <w>152</w>
+      <h>88</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Models
-#Name String
 --
-+getName();
-+setName();</panel_attributes>
+#Name : String
+--
++setName(name : string) : void
++getName() : String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1074</x>
       <y>126</y>
       <w>96</w>
       <h>48</h>
+=======
+      <x>760</x>
+      <y>336</y>
+      <w>264</w>
+      <h>88</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Blocks
-+destroyable boolean
 --
-+setDestroyableIsTrue();
-+getDestroyable();</panel_attributes>
++isDestroyable : boolean
+--
++setDestroyable(isDestroyable : boolean)
++isDestroyable() : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1176</x>
       <y>114</y>
       <w>96</w>
       <h>60</h>
+=======
+      <x>896</x>
+      <y>248</y>
+      <w>128</w>
+      <h>80</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>/Droppable/
-#dropchance int
+--
+#dropchance : int
 --
 /+void pickup();/
 +void setDropChance();
@@ -92,48 +141,68 @@ _+ main(args : String[]) : void_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1080</x>
       <y>372</y>
       <w>72</w>
       <h>72</h>
+=======
+      <x>768</x>
+      <y>608</y>
+      <w>208</w>
+      <h>88</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Enemy
-+value int
 --
-+getValue();
-+void setValue();</panel_attributes>
+-pointVal : int
+--
++setpointVal(pointVal : int) : void
++getpointVal() : int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>966</x>
       <y>120</y>
       <w>84</w>
       <h>168</h>
+=======
+      <x>616</x>
+      <y>328</y>
+      <w>144</w>
+      <h>224</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Attackers
-#armorMod int
-#damage int
-#Lives char
-#armor int
-#damageModifier int
 --
-+void setArmorMod();
-+getArmorMod();
-+void setDamage();
-+getDamage();
-+void setLives();
-+getLives();
-+getArmor();
-+void setArmor();
-+getDamageModifier();
-+void setDamageModifier();</panel_attributes>
+#armorMod : int
+#damage : int
+#Lives : char
+#armor : int
+#damageMod : int
+-gun : Projectile
+--
++setArmorMod(armorMod : int) : void
++getArmorMod() : int
++setDamage(damage : int) : void
++getDamage() : int
++setLives(lives : char) : void
++getLives() : char
++setArmor(armor : int) : void
++getArmor() : int
++setDamageMod(damageMod : int) : void
++getDamageMod() : int
++setGun(gun : Projectile) : void
++getGun() : Projectile</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>384</x>
       <y>54</y>
       <w>690</w>
@@ -141,25 +210,48 @@ _+ main(args : String[]) : void_</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>1130.0;20.0;10.0;10.0;10.0;90.0</additional_attributes>
+=======
+      <x>376</x>
+      <y>224</y>
+      <w>384</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>460.0;10.0;130.0;10.0;130.0;90.0;10.0;90.0</additional_attributes>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1116</x>
       <y>60</y>
       <w>102</w>
       <h>66</h>
+=======
+      <x>888</x>
+      <y>224</y>
+      <w>64</w>
+      <h>40</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>150.0;90.0;150.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;30.0;60.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1086</x>
       <y>102</y>
       <w>18</w>
       <h>36</h>
+=======
+      <x>776</x>
+      <y>304</y>
+      <w>24</w>
+      <h>48</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
@@ -167,32 +259,53 @@ _+ main(args : String[]) : void_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>996</x>
       <y>66</y>
       <w>78</w>
       <h>66</h>
+=======
+      <x>656</x>
+      <y>240</y>
+      <w>104</w>
+      <h>104</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0;110.0;10.0</additional_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0;110.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>972</x>
       <y>282</y>
       <w>18</w>
       <h>102</h>
+=======
+      <x>624</x>
+      <y>544</y>
+      <w>24</w>
+      <h>80</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
+<<<<<<< HEAD
       <x>696</x>
       <y>42</y>
       <w>852</w>
       <h>588</h>
+=======
+      <x>600</x>
+      <y>184</y>
+      <w>800</w>
+      <h>744</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>models
 --
@@ -202,17 +315,25 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1044</x>
       <y>282</y>
       <w>78</w>
       <h>102</h>
+=======
+      <x>752</x>
+      <y>544</y>
+      <w>72</w>
+      <h>80</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>110.0;150.0;110.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>70.0;80.0;70.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>972</x>
       <y>546</y>
       <w>168</w>
@@ -225,15 +346,32 @@ bg=blue</panel_attributes>
 + getMap() : Models[][]
 + setMap(newMap : Models[][]) : void
 </panel_attributes>
+=======
+      <x>608</x>
+      <y>856</y>
+      <w>208</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Grid
+--
+Models[][] models = new Model[10][10]</panel_attributes>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>174</x>
       <y>696</y>
       <w>90</w>
       <h>36</h>
+=======
+      <x>208</x>
+      <y>656</y>
+      <w>120</w>
+      <h>48</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Menu
 --
@@ -243,10 +381,17 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>42</x>
       <y>762</y>
       <w>96</w>
       <h>30</h>
+=======
+      <x>32</x>
+      <y>744</y>
+      <w>128</w>
+      <h>40</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>MainMenu
 --
@@ -256,10 +401,17 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>150</x>
       <y>780</y>
       <w>102</w>
       <h>48</h>
+=======
+      <x>176</x>
+      <y>768</y>
+      <w>136</w>
+      <h>64</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Difficulty Selection
 --
@@ -269,10 +421,17 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>270</x>
       <y>744</y>
       <w>90</w>
       <h>78</h>
+=======
+      <x>336</x>
+      <y>720</y>
+      <w>120</w>
+      <h>104</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Shop
 --
@@ -282,10 +441,40 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>462</x>
       <y>354</y>
       <w>18</w>
       <h>84</h>
+=======
+      <x>408</x>
+      <y>416</y>
+      <w>208</w>
+      <h>472</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>240.0;570.0;220.0;570.0;220.0;190.0;10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>416</y>
+      <w>272</w>
+      <h>488</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>320.0;590.0;270.0;590.0;270.0;220.0;10.0;220.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>320</y>
+      <w>24</w>
+      <h>48</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=</panel_attributes>
@@ -294,10 +483,17 @@ m1=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>66</x>
       <y>702</y>
       <w>120</w>
       <h>72</h>
+=======
+      <x>64</x>
+      <y>664</y>
+      <w>160</w>
+      <h>96</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;100.0;10.0;10.0;180.0;10.0</additional_attributes>
@@ -305,10 +501,17 @@ m1=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>258</x>
       <y>702</y>
       <w>54</w>
       <h>54</h>
+=======
+      <x>320</x>
+      <y>664</y>
+      <w>72</w>
+      <h>72</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>70.0;70.0;70.0;10.0;10.0;10.0</additional_attributes>
@@ -316,10 +519,17 @@ m1=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>204</x>
       <y>726</y>
       <w>18</w>
       <h>60</h>
+=======
+      <x>248</x>
+      <y>696</y>
+      <w>24</w>
+      <h>80</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
@@ -327,10 +537,17 @@ m1=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>204</x>
       <y>354</y>
       <w>24</w>
       <h>354</h>
+=======
+      <x>248</x>
+      <y>320</y>
+      <w>24</w>
+      <h>352</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;570.0;20.0;10.0</additional_attributes>
@@ -338,134 +555,208 @@ m1=</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1128</x>
       <y>210</y>
       <w>90</w>
       <h>48</h>
+=======
+      <x>1080</x>
+      <y>520</y>
+      <w>304</w>
+      <h>88</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Armor
-+armorMod int
 --
-+void setArmorMod();
-+getArmorMod();</panel_attributes>
++armorMod : int
+--
++setArmorMod(armorMod : int) : void
++getArmorMod() : int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1224</x>
       <y>210</y>
       <w>84</w>
       <h>48</h>
+=======
+      <x>1080</x>
+      <y>432</y>
+      <w>304</w>
+      <h>88</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Multifire
-+muliFire bool
 --
-+setMultifireIsTrue();
-+getMultifire();
++muliFire : boolean
+--
++setMultifire(mulitFie : boolean) : void
++getMultifire() : boolean
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1314</x>
       <y>210</y>
       <w>84</w>
       <h>48</h>
+=======
+      <x>1080</x>
+      <y>344</y>
+      <w>304</w>
+      <h>88</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Points Modifier
-+pointModifier int
 --
-+setPointModifier();
-+getPointModifier();</panel_attributes>
++pointMod : int
+--
++setPointMod(pointMod : int): void
++getPointMod() : int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1404</x>
       <y>210</y>
       <w>90</w>
       <h>48</h>
+=======
+      <x>1080</x>
+      <y>256</y>
+      <w>304</w>
+      <h>88</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Damage Modifier
-+damageModifier int
 --
-+setDamageModifier();
-+getDamageModifier();</panel_attributes>
++damageMod : int
+--
++setDamageMod(damageMod : int) : void
++getDamageMod() : int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1182</x>
       <y>168</y>
       <w>18</w>
       <h>54</h>
+=======
+      <x>1032</x>
+      <y>432</y>
+      <w>64</w>
+      <h>112</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;120.0;10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1254</x>
       <y>168</y>
       <w>18</w>
       <h>54</h>
+=======
+      <x>1032</x>
+      <y>344</y>
+      <w>64</w>
+      <h>112</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;120.0;10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1266</x>
       <y>138</y>
       <w>108</w>
       <h>84</h>
+=======
+      <x>1032</x>
+      <y>256</y>
+      <w>64</w>
+      <h>112</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>160.0;120.0;160.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;120.0;10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1356</x>
       <y>138</y>
       <w>114</w>
       <h>84</h>
+=======
+      <x>1016</x>
+      <y>256</y>
+      <w>80</w>
+      <h>24</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>170.0;120.0;170.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>960</x>
       <y>372</y>
       <w>120</w>
       <h>114</h>
+=======
+      <x>608</x>
+      <y>608</y>
+      <w>160</w>
+      <h>136</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Player
-+score int
-
-+multifire boolean
 --
-+getScore(): void;
-+void setScore();
-+getMultifire();
-+void setMultifireIsTrue();</panel_attributes>
+-score : int
+-Coins : int
+--
++setScore(score : int) : void
++getScore(): int
++setCoins(coins : int) : void
++getCoins() int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>450</x>
       <y>426</y>
       <w>144</w>
       <h>54</h>
+=======
+      <x>304</x>
+      <y>352</y>
+      <w>192</w>
+      <h>72</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Grid Handler
 --
@@ -476,10 +767,17 @@ m1=</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
+<<<<<<< HEAD
       <x>0</x>
       <y>0</y>
       <w>678</w>
       <h>582</h>
+=======
+      <x>216</x>
+      <y>184</y>
+      <w>304</w>
+      <h>248</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>Controller
 --
@@ -489,10 +787,17 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
+<<<<<<< HEAD
       <x>18</x>
       <y>654</y>
       <w>360</w>
       <h>198</h>
+=======
+      <x>0</x>
+      <y>600</y>
+      <w>480</w>
+      <h>264</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>View
 --
@@ -502,10 +807,17 @@ bg=red</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1134</x>
       <y>444</y>
       <w>132</w>
       <h>78</h>
+=======
+      <x>976</x>
+      <y>608</y>
+      <w>176</w>
+      <h>240</h>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
     </coordinates>
     <panel_attributes>projectile
 --
@@ -525,6 +837,7 @@ bg=red</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
+<<<<<<< HEAD
     <id>UMLClass</id>
     <coordinates>
       <x>726</x>
@@ -541,5 +854,16 @@ bg=red</panel_attributes>
 
 </panel_attributes>
     <additional_attributes/>
+=======
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>544</y>
+      <w>248</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>290.0;80.0;290.0;10.0;10.0;10.0</additional_attributes>
+>>>>>>> f47dcb470f89ed16b42929b890eb910d20479ac1
   </element>
 </diagram>
