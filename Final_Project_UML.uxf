@@ -26,7 +26,7 @@
 --
 - timer : int
 - mapHandler : GridHandler
-
+- currentCampaign : Campaign
 --
 + run() : void
 + handleInput() : void
@@ -203,7 +203,7 @@
       <x>592</x>
       <y>16</y>
       <w>808</w>
-      <h>744</h>
+      <h>1016</h>
     </coordinates>
     <panel_attributes>models
 --
@@ -242,7 +242,11 @@ bg=blue</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>200</x>
+<<<<<<< HEAD
       <y>488</y>
+=======
+      <y>776</y>
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
       <w>120</w>
       <h>48</h>
     </coordinates>
@@ -255,7 +259,11 @@ bg=blue</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>24</x>
+<<<<<<< HEAD
       <y>576</y>
+=======
+      <y>864</y>
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -268,7 +276,11 @@ bg=blue</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>168</x>
+<<<<<<< HEAD
       <y>600</y>
+=======
+      <y>888</y>
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
       <w>136</w>
       <h>48</h>
     </coordinates>
@@ -281,7 +293,11 @@ bg=blue</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>328</x>
+<<<<<<< HEAD
       <y>552</y>
+=======
+      <y>840</y>
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
       <w>120</w>
       <h>48</h>
     </coordinates>
@@ -293,17 +309,23 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>400</x>
       <y>344</y>
+=======
+      <x>408</x>
+      <y>320</y>
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
       <w>304</w>
-      <h>296</h>
+      <h>304</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>360.0;350.0;220.0;350.0;220.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>360.0;360.0;220.0;360.0;220.0;80.0;10.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>336</x>
       <y>344</y>
       <w>360</w>
@@ -312,6 +334,16 @@ bg=blue</panel_attributes>
     <panel_attributes>lt=&lt;-
 </panel_attributes>
     <additional_attributes>430.0;380.0;260.0;380.0;260.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
+=======
+      <x>344</x>
+      <y>320</y>
+      <w>368</w>
+      <h>328</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>440.0;390.0;260.0;390.0;260.0;110.0;10.0;110.0;10.0;10.0</additional_attributes>
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
   </element>
   <element>
     <id>Relation</id>
@@ -323,13 +355,17 @@ bg=blue</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=</panel_attributes>
-    <additional_attributes>270.0;100.0;270.0;10.0;200.0;10.0;200.0;210.0;10.0;210.0;10.0;170.0</additional_attributes>
+    <additional_attributes>270.0;50.0;270.0;10.0;200.0;10.0;200.0;210.0;10.0;210.0;10.0;170.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>56</x>
+<<<<<<< HEAD
       <y>496</y>
+=======
+      <y>784</y>
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
       <w>160</w>
       <h>96</h>
     </coordinates>
@@ -340,7 +376,11 @@ m1=</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>312</x>
+<<<<<<< HEAD
       <y>496</y>
+=======
+      <y>784</y>
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
       <w>72</w>
       <h>72</h>
     </coordinates>
@@ -351,7 +391,11 @@ m1=</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>240</x>
+<<<<<<< HEAD
       <y>528</y>
+=======
+      <y>816</y>
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
       <w>24</w>
       <h>80</h>
     </coordinates>
@@ -364,10 +408,10 @@ m1=</panel_attributes>
       <x>24</x>
       <y>288</y>
       <w>240</w>
-      <h>216</h>
+      <h>520</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>280.0;250.0;280.0;120.0;10.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>270.0;630.0;280.0;120.0;10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -500,14 +544,24 @@ m1=</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>296</x>
       <y>240</y>
+=======
+      <x>304</x>
+      <y>184</y>
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
       <w>200</w>
-      <h>112</h>
+      <h>144</h>
     </coordinates>
     <panel_attributes>GridHandler
 --
 - currentGrid : Grid
+<<<<<<< HEAD
+=======
+- currentModel : Model
+
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
 --
 + removeSpot(x:int, y:int): void
 + addSpot(x:int, y:int) : void</panel_attributes>
@@ -529,8 +583,13 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
+<<<<<<< HEAD
       <x>0</x>
       <y>456</y>
+=======
+      <x>8</x>
+      <y>728</y>
+>>>>>>> 5d4caa566d9c0480807e85717217a494de673430
       <w>480</w>
       <h>264</h>
     </coordinates>
@@ -571,5 +630,35 @@ bg=red</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>320.0;80.0;320.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>696</y>
+      <w>416</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>Campaign implements Serializable
+--
+- currentMap : Grid
+- savePath : File
+- currentScore : int
+- currentLevel : int
+- currentDifficulty : String
+--
++ getCurrentMap() : Grid
++ setCurrentMap(map : Grid) : void
++ getSavePath() : File
++ setSavePath(path : File) : void
++ getScore() : int
++ setScore(score : int) : void
++ getLevel() : int
++ setLevel(level : int) : void
++ getDifficulty : String
++ setDifficulty(difficulty : int) : void
++ toString() : String &lt;&lt;Ovverride&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
