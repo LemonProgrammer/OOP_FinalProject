@@ -1,6 +1,10 @@
 package models;
 
-public abstract class ModelComponent {
+import interfaces.Collidable;
+import interfaces.Movable;
+import interfaces.Showable;
+
+public abstract class ModelComponent implements Movable, Showable, Collidable {
 	private String name;
 
 	public String getName() {
