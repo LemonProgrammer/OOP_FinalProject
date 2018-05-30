@@ -1,14 +1,10 @@
 package controller;
 
 import lib.ConsoleIO;
-import models.EmptyTile;
-import models.Enemy;
-import models.ModelComponent;
-import models.Player;
-import models.Projectile;
+import models.*;
 
 public class Game {
-	
+
 	// Runs the game
 	public static void runGame(int choice) {
 		// If its the first time to play, create a new game
@@ -23,7 +19,7 @@ public class Game {
 	private static void newGame() {
 		// Making the player
 		ModelComponent player = createPlayer();
-		
+
 		// Making the enemies
 		ModelComponent enemies = createEnemy();
 		// Making the grid
@@ -31,15 +27,15 @@ public class Game {
 		// printing the grid
 		printGrid(map);
 		// Player turn
-
+		playerTurn(map, player);
 		// checking gameState
 
 	}
 
 	private static Player createPlayer() {
-		//Loads the gun with projectiles
+		// Loads the gun with projectiles
 		Projectile gun = new Projectile(2, 1);
-		//Makes a new player with a gun and Sprite P
+		// Makes a new player with a gun and Sprite P
 		Player player = new Player(" P ", 'A', gun);
 		return player;
 	}
@@ -84,21 +80,64 @@ public class Game {
 		}
 	}
 
-	private static void PlayerTurn(ModelComponent[][] map) {
+	private static void playerTurn(ModelComponent[][] map, ModelComponent player) {
+		ModelComponent freeSpace = new EmptyTile();
 		String[] options = { "Move Left", "Move right", "Shoot" };
-		int playerChoice = ConsoleIO.promptForMenuSelection(options, false);
-		switch (playerChoice) {
-		case 1:
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
+		boolean gameOver = false;
+		do {
+			printGrid(map);
+			int playerChoice = ConsoleIO.promptForMenuSelection(options, false);
+			switch (playerChoice) {
+			case 1:
+				map = moveLeft(map, player, freeSpace);
+				break;
+			case 2:
+				map = moveRight(map, player, freeSpace);
+				break;
+			case 3:
+				break;
+			}
+		} while (!gameOver);
+	}
+
+	private static ModelComponent[][] moveLeft(ModelComponent[][] map, ModelComponent player,
+			ModelComponent freeSpace) {
+		for (int i = 0; i < map.length; i++) {
+			for (int c = 0; c < map[i].length; c++) {
+				if (map[i][c].equals(player)) {
+					if (c - 1 < 0) {
+						break;
+					} else {
+						map[i][c] = freeSpace;
+						map[i][c - 1] = player;
+					}
+
+				}
+			}
 		}
+		return map;
+	}
+
+	private static ModelComponent[][] moveRight(ModelComponent[][] map, ModelComponent player,
+			ModelComponent freeSpace) {
+		for (int i = 0; i < map.length; i++) {
+			for (int c = map[i].length - 1; c > -1; c--) {
+				if (map[i][c].equals(player)) {
+					System.out.println(c);
+					if (c + 1 == map[i].length) {
+						break;
+					} else {
+						map[i][c] = freeSpace;
+						map[i][c + 1] = player;
+					}
+				}
+			}
+		}
+		return map;
 	}
 
 	private static void loadGame() {
-		
+
 	}
 
 }

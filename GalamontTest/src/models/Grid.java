@@ -1,19 +1,17 @@
 package models;
 
-import java.util.ArrayList;
-
 public class Grid {
-	private ArrayList<ArrayList<ModelComponent>> map;
+	private ModelComponent[][] map;
 
-	public ArrayList<ArrayList<ModelComponent>> getMap() {
+	public ModelComponent[][] getMap() {
 		return map;
 	}
 
-	public void setMap(ArrayList<ArrayList<ModelComponent>> map) {
+	public void setMap(ModelComponent[][] map) {
 		this.map = map;
 	}
 
-	public Grid(ArrayList<ArrayList<ModelComponent>> map) {
+	public Grid(ModelComponent[][] map) {
 		setMap(map);
 	}
 }
