@@ -1,7 +1,5 @@
 package controller;
 
-import java.io.File;
-
 import lib.ConsoleIO;
 import models.EmptyTile;
 import models.Enemy;
