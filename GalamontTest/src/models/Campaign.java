@@ -9,6 +9,13 @@ public class Campaign implements Serializable {
 	private Player currentPlayer;
 	private int currentHighScore;
 
+	public Campaign(Grid currentLevel, int currentLevelNum, Player currentPlayer, int currentHighScore) {
+		setCurrentLevel(currentLevel);
+		setCurrentLevelNum(currentLevelNum);
+		setCurrentPlayer(currentPlayer);
+		setCurrentHighScore(currentHighScore);
+	}
+	
 	public Grid getCurrentLevel() {
 		return currentLevel;
 	}
@@ -41,11 +48,5 @@ public class Campaign implements Serializable {
 		this.currentHighScore = currentHighScore;
 	}
 
-	public Campaign(Grid currentLevel, int currentLevelNum, Player currentPlayer, int currentHighScore) {
-		setCurrentLevel(currentLevel);
-		setCurrentLevelNum(currentLevelNum);
-		setCurrentPlayer(currentPlayer);
-		setCurrentHighScore(currentHighScore);
-	}
 
 }

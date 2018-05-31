@@ -1,33 +1,70 @@
 package controller;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.net.URL;
+
 import lib.ConsoleIO;
-import models.*;
+import models.Campaign;
+import models.EmptyTile;
+import models.Enemy;
+import models.Grid;
+import models.ModelComponent;
+import models.Player;
+import models.Projectile;
 
 public class Game {
 
 	// Runs the game
-	public static void runGame(int choice) {
-		// If its the first time to play, create a new game
-		// Else, load an existing game
-		if (choice == 1) {
-			newGame();
-		} else {
-			loadGame();
-		}
+	public static void runNewGame() {
+		newGame();
 	}
 
 	private static void newGame() {
 		// Making the player
-		ModelComponent player = createPlayer();
-
+		Player player = createPlayer();
+		int level = 1;
+		int highScore = 0;
 		// Making the enemies
 		ModelComponent enemies = createEnemy();
 		// Making the grid
-		ModelComponent[][] map = createGrid(player, enemies);
+		Grid map = createGrid(player, enemies);
+		Campaign newCampaign = new Campaign(map, level, player, highScore);
 		// printing the grid
-		playerTurn(map, player);
+		playGame(newCampaign);
 		// checking gameState
 
+	}
+
+	public static void playGame(Campaign camp) {
+		Player currentPlayer = camp.getCurrentPlayer();
+		
+		boolean gameIsOver = false;
+		do
+		{	
+			gameIsOver = playerTurn(camp.getCurrentLevel(), currentPlayer, camp);
+			//printGrid(camp.getCurrentLevel().getMap());
+			//gameIsOver = enemyTurn();
+		} while(!gameIsOver);
+	
+	}
+	
+	private static boolean enemyTurn(Grid currentMap, Player player, Campaign camp)
+	{
+		return false;
+		
+	}
+	
+	private static Enemy spawnEnemy()
+	{
+		return null;
 	}
 
 	private static Player createPlayer() {
@@ -44,7 +81,7 @@ public class Game {
 		return player;
 	}
 
-	private static ModelComponent[][] createGrid(ModelComponent player, ModelComponent enemies) {
+	private static Grid createGrid(ModelComponent player, ModelComponent enemies) {
 		ModelComponent[][] map = new ModelComponent[20][13];
 		ModelComponent freeSpace = new EmptyTile();
 		int enemyMax = 11;
@@ -66,7 +103,8 @@ public class Game {
 				enemyMin += 1;
 			}
 		}
-		return map;
+		Grid grid = new Grid(map);
+		return grid;
 	}
 
 	private static void printGrid(ModelComponent[][] map) {
@@ -78,36 +116,39 @@ public class Game {
 		}
 	}
 
-	private static void playerTurn(ModelComponent[][] map, ModelComponent player) {
+	private static boolean playerTurn(Grid map, ModelComponent player, Campaign currentCamp) {
 		ModelComponent freeSpace = new EmptyTile();
-		String[] options = { "Move Left", "Move right", "Shoot" };
+		String[] options = { "Move Left", "Move right", "Shoot", "Quit and Save Game" };
 		boolean gameOver = false;
-		do {
-			printGrid(map);
+			printGrid(map.getMap());
 			int playerChoice = ConsoleIO.promptForMenuSelection(options, false);
 			switch (playerChoice) {
 			case 1:
-				map = moveLeft(map, player, freeSpace);
+				map.setMap(moveLeft(map.getMap(), player, freeSpace));
 				break;
 			case 2:
-				map = moveRight(map, player, freeSpace);
+				map.setMap(moveRight(map.getMap(), player, freeSpace));
 				break;
 			case 3:
 				break;
+			case 4:
+				saveGame(currentCamp);
+				gameOver = true;
+				break;
 			}
-		} while (!gameOver);
+		return gameOver;
 	}
 
-	private static ModelComponent[][] moveLeft(ModelComponent[][] map, ModelComponent player,
+	private static ModelComponent[][] moveLeft(ModelComponent[][] map, ModelComponent model,
 			ModelComponent freeSpace) {
 		for (int i = 0; i < map.length; i++) {
 			for (int c = 0; c < map[i].length; c++) {
-				if (map[i][c].equals(player)) {
+				if (map[i][c].equals(model)) {
 					if (c - 1 < 0) {
 						break;
 					} else {
 						map[i][c] = freeSpace;
-						map[i][c - 1] = player;
+						map[i][c - 1] = model;
 					}
 
 				}
@@ -116,17 +157,17 @@ public class Game {
 		return map;
 	}
 
-	private static ModelComponent[][] moveRight(ModelComponent[][] map, ModelComponent player,
+	private static ModelComponent[][] moveRight(ModelComponent[][] map, ModelComponent model,
 			ModelComponent freeSpace) {
 		for (int i = 0; i < map.length; i++) {
 			for (int c = map[i].length - 1; c > -1; c--) {
-				if (map[i][c].equals(player)) {
+				if (map[i][c].equals(model)) {
 					System.out.println(c);
 					if (c + 1 == map[i].length) {
 						break;
 					} else {
 						map[i][c] = freeSpace;
-						map[i][c + 1] = player;
+						map[i][c + 1] = model;
 					}
 				}
 			}
@@ -134,7 +175,48 @@ public class Game {
 		return map;
 	}
 
-	private static void loadGame() {
+	private static void saveGame(Campaign currentCamp) {
+		try {
+			//URL file = Game.class.getResource("");
+			File saveFile = new File("GameSave.txt");
+			FileOutputStream fis = new FileOutputStream(saveFile);
+			ObjectOutputStream writer = new ObjectOutputStream(fis);
+			writer.writeObject(currentCamp);
+			fis.close();
+			writer.close();
+			System.out.println("Successfully saved the game.");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public static Campaign loadGame() {
+
+		Campaign loadCamp = null;
+		try {
+			File saveFile = new File("GameSave.txt");
+			String path = saveFile.getPath();
+			FileInputStream fos = new FileInputStream(path);
+			ObjectInputStream reader = new ObjectInputStream(fos);
+			loadCamp = (Campaign) reader.readObject();
+			fos.close();
+			reader.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Something went wrong with the file.");
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("This file is cannot be loaded to the class due to conflicting data.");
+			e.printStackTrace();
+		}
+
+		return loadCamp;
 
 	}
 

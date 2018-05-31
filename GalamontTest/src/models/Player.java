@@ -1,6 +1,8 @@
 package models;
 
-public class Player extends Attacker {
+import java.io.Serializable;
+
+public class Player extends Attacker{
 	private int score;
 	private int coins;
 

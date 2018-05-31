@@ -1,6 +1,7 @@
 package controller;
 
 import lib.ConsoleIO;
+import models.Campaign;
 
 public class Runner {
 
@@ -9,23 +10,32 @@ public class Runner {
 	}
 
 	private static void mainMenu() {
-		String[] options = { "Play Game", "Load Game", "Shop", "Credits" };
-		int choice = ConsoleIO.promptForMenuSelection(options, false);
+		boolean isQuit = false;
+		do
+		{
+			String[] options = { "Play Game", "Load Game", "Shop", "Credits"};
+			int choice = ConsoleIO.promptForMenuSelection(options, true);
+			Campaign loadedCampaign = null;
+			switch (choice) {
+			case 1:
+				Game.runNewGame();
+				break;
+			case 2:
+				loadedCampaign = Game.loadGame();
+				Game.playGame(loadedCampaign);
+				break;
+			case 3:
+				
+				break;
+			case 4:
+				break;
+			case 0:
+				isQuit = true;
+				break;
 
-		switch (choice) {
-		case 1:
-			Game.runGame(choice);
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		case 4:
-			break;
-		case 0:
-			break;
-
-		}
+			}
+		}while(!isQuit);
+	
 	}
 
 }

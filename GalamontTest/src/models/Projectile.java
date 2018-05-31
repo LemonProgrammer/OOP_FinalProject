@@ -8,6 +8,8 @@ public class Projectile extends ModelComponent {
 	private int speed;
 	
 	private boolean isColliding;
+	
+	private boolean isShowable;
 
 	public int getBulletStr() {
 		return bulletStr;
@@ -42,26 +44,14 @@ public class Projectile extends ModelComponent {
 
 	@Override
 	public boolean checkIfIsShowable() {
-		// TODO Auto-generated method stub
-		return false;
+
+		return isShowable;
 	}
 
 	@Override
 	public void setShowability(boolean canShow) {
 		// TODO Auto-generated method stub
-		
+		this.isShowable = canShow;
 	}
-
-	@Override
-	public boolean getShowabilityStatus() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void updateShowStatus() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	}

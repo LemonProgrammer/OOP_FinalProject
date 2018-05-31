@@ -1,10 +1,11 @@
 package models;
 
+import java.io.Serializable;
+
 import interfaces.Collidable;
-import interfaces.Movable;
 import interfaces.Showable;
 
-public abstract class ModelComponent implements  Showable {
+public abstract class ModelComponent implements  Showable, Serializable {
 	private String name;
 
 	public String getName() {

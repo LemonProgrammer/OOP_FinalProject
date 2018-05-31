@@ -30,16 +30,6 @@ public void setDestroyable(boolean isDestroyable) {
 		
 	}
 
-	@Override
-	public boolean getShowabilityStatus() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	@Override
-	public void updateShowStatus() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	}

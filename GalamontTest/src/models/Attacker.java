@@ -74,17 +74,7 @@ public class Attacker extends ModelComponent {
 		
 	}
 
-	@Override
-	public boolean getShowabilityStatus() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	@Override
-	public void updateShowStatus() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	
 	}

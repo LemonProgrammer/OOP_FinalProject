@@ -1,6 +1,8 @@
 package models;
 
-public class Grid {
+import java.io.Serializable;
+
+public class Grid implements Serializable{
 	private ModelComponent[][] map;
 
 	public ModelComponent[][] getMap() {
@@ -14,4 +16,7 @@ public class Grid {
 	public Grid(ModelComponent[][] map) {
 		setMap(map);
 	}
+	
+	
+	
 }
