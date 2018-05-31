@@ -1,6 +1,8 @@
 package models;
 
-public class Enemy extends Attacker {
+import interfaces.Movable;
+
+public class Enemy extends Attacker implements Movable{
 
 	private int pointVal;
 	private int dropChance;
@@ -35,5 +37,71 @@ public class Enemy extends Attacker {
 		setPointVal(pointVal);
 		setDropChance(dropChance);
 		setGun(gun);
+	}
+
+	@Override
+	public boolean checkIfIsMovable(boolean canMove) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean checkIfCanMoveHorizontal() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean checkIfCanMoveVertical() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void moveRight(int x) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveLeft(int x) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveUp(int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveDown(int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveLeftToRightDiagonally(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveRightToLeftDiagonally(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean checkIfMoveIsOutOfBounds(int x, int y) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void setMovementSpeed(int numOfSpots) {
+		// TODO Auto-generated method stub
+		
 	}
 }

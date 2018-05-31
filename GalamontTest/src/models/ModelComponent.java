@@ -4,7 +4,7 @@ import interfaces.Collidable;
 import interfaces.Movable;
 import interfaces.Showable;
 
-public abstract class ModelComponent implements Movable, Showable, Collidable {
+public abstract class ModelComponent implements  Showable {
 	private String name;
 
 	public String getName() {

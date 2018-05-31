@@ -25,8 +25,6 @@ public class Game {
 		// Making the grid
 		ModelComponent[][] map = createGrid(player, enemies);
 		// printing the grid
-		printGrid(map);
-		// Player turn
 		playerTurn(map, player);
 		// checking gameState
 
