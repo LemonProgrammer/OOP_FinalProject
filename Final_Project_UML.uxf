@@ -225,14 +225,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>49</x>
-      <y>805</y>
-      <w>308</w>
-      <h>182</h>
-    </coordinates>
-    <panel_attributes>Menu
---
-- currentCampaign : Campaign
+
 --
 + setCurrCampaign(Campaign camp) : void
 + getCurrCampaign() : Campaign
@@ -298,9 +291,7 @@ bg=orange</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>0</x>
-      <y>707</y>
-      <w>511</w>
-      <h>441</h>
+
     </coordinates>
     <panel_attributes>View
 --
@@ -376,52 +367,9 @@ bg=red</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>287</x>
-      <y>742</y>
-      <w>112</w>
-      <h>35</h>
+
     </coordinates>
     <panel_attributes>Application</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>294</x>
-      <y>770</y>
-      <w>21</w>
-      <h>49</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>98</x>
-      <y>1022</y>
-      <w>231</w>
-      <h>98</h>
-    </coordinates>
-    <panel_attributes>GameView
---
-- currentMapHandler : GridHandler
-- currentGame : Game
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>532</x>
-      <y>0</y>
-      <w>707</w>
-      <h>1036</h>
-    </coordinates>
-    <panel_attributes>models
---
-bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
