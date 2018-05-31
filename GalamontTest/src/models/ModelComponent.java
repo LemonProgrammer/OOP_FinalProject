@@ -7,7 +7,8 @@ import interfaces.Showable;
 
 public abstract class ModelComponent implements  Showable, Serializable {
 	private String name;
-
+	private boolean isOccupied;
+	
 	public String getName() {
 		return name;
 	}
@@ -18,6 +19,14 @@ public abstract class ModelComponent implements  Showable, Serializable {
 
 	public ModelComponent(String name) {
 		setName(name);
+	}
+
+	public boolean isOccupied() {
+		return isOccupied;
+	}
+
+	public void setOccupied(boolean isOccupied) {
+		this.isOccupied = isOccupied;
 	}
 
 	@Override

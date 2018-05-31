@@ -10,6 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.URL;
+import java.util.Random;
 
 import lib.ConsoleIO;
 import models.Campaign;
@@ -45,20 +46,40 @@ public class Game {
 
 	public static void playGame(Campaign camp) {
 		Player currentPlayer = camp.getCurrentPlayer();
-		
+		Enemy currentEnemies = createEnemy();
 		boolean gameIsOver = false;
 		do
 		{	
 			gameIsOver = playerTurn(camp.getCurrentLevel(), currentPlayer, camp);
 			//printGrid(camp.getCurrentLevel().getMap());
-			//gameIsOver = enemyTurn();
+			enemyTurn(camp.getCurrentLevel(), currentEnemies, camp);
 		} while(!gameIsOver);
 	
 	}
 	
-	private static boolean enemyTurn(Grid currentMap, Player player, Campaign camp)
+	private static void enemyTurn(Grid currentMap, Enemy enemies, Campaign camp)
 	{
-		return false;
+		ModelComponent freeSpace = new EmptyTile();
+		String[] options = { "Left", "Right", "Shoot", "Down" };
+		//boolean gameOver = false;
+			//printGrid(currentMap.getMap());
+			Random rng = new Random();
+			int eChoice = rng.nextInt(options.length);
+			switch (eChoice) {
+			case 1:
+				currentMap.setMap(moveLeft(currentMap.getMap(), enemies, freeSpace));
+				break;
+			case 2:
+				currentMap.setMap(moveRight(currentMap.getMap(), enemies, freeSpace));
+				break;
+			case 3:
+				
+				break;
+			case 4:
+				currentMap.setMap(moveDown(currentMap.getMap(), enemies, freeSpace));
+				break;
+			}
+		
 		
 	}
 	
@@ -91,11 +112,16 @@ public class Game {
 			for (int c = 0; c < map[i].length; c++) {
 				if (i == map.length - 1) {
 					map[i][map[i].length / 2] = player;
+					map[i][map[i].length / 2].setOccupied(true);
+					
 					map[i][c] = freeSpace;
+					map[i][c].setOccupied(false);
 				} else if (c > enemyMin && c < enemyMax) {
 					map[i][c] = enemies;
+					map[i][c].setOccupied(true);
 				} else {
 					map[i][c] = freeSpace;
+					map[i][c].setOccupied(false);
 				}
 			}
 			if (i % 2 == 0) {
@@ -143,12 +169,14 @@ public class Game {
 			ModelComponent freeSpace) {
 		for (int i = 0; i < map.length; i++) {
 			for (int c = 0; c < map[i].length; c++) {
-				if (map[i][c].equals(model)) {
+				if (map[i][c] == model || map[i][c].isOccupied()) {
 					if (c - 1 < 0) {
 						break;
 					} else {
 						map[i][c] = freeSpace;
 						map[i][c - 1] = model;
+						map[i][c-1].setOccupied(true);
+						map[i][c].setOccupied(false);
 					}
 
 				}
@@ -161,18 +189,43 @@ public class Game {
 			ModelComponent freeSpace) {
 		for (int i = 0; i < map.length; i++) {
 			for (int c = map[i].length - 1; c > -1; c--) {
-				if (map[i][c].equals(model)) {
+				if (map[i][c] == model || map[i][c].isOccupied()) {
 					System.out.println(c);
 					if (c + 1 == map[i].length) {
 						break;
 					} else {
 						map[i][c] = freeSpace;
 						map[i][c + 1] = model;
+						map[i][c+1].setOccupied(true);
+						map[i][c].setOccupied(false);
 					}
 				}
 			}
 		}
 		return map;
+	}
+
+	private static ModelComponent[][] moveDown( ModelComponent[][] map, ModelComponent model, ModelComponent freeSpace)
+	{
+		for (int i = 0; i < map.length; i++) {
+			//row
+			for (int c = map[i].length - 1; c > -1; c--) {
+				//col
+				if (map[i][c] == model || map[i][c].isOccupied()) {
+					System.out.println(c);
+					if (i + 1 == map.length) {
+						break;
+					} else {
+						map[i][c] = freeSpace;
+						map[i+1][c] = model;
+						map[i][c].setOccupied(false);
+						map[i+1][c].setOccupied(true);
+					}
+				}
+			}
+		}
+		return map;
+		
 	}
 
 	private static void saveGame(Campaign currentCamp) {
