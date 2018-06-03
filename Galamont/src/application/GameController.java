@@ -2,6 +2,7 @@ package application;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import models.EmptyTile;
 import models.Enemy;
@@ -15,6 +16,7 @@ public class GameController {
 	GameModels freeSpace;
 	GameModels enemies;
 	Label label;
+	
 
 	public GridPane testGrid;
 
