@@ -9,6 +9,6 @@ public class MainMenuController {
 	Label l2= new Label();
 	 Image image = new Image(getClass().getResourceAsStream("START.png"));
     l2.setGraphic(new ImageView(image));
-    start.set
+    //start.set
 	}
 }

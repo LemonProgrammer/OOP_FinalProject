@@ -53,13 +53,13 @@ public class GameController {
 	}
 
 	private Player createPlayer() {
-		Projectile gun = new Projectile(2, 1);
+		Projectile gun = new Projectile(2, 1, "O");
 		Player player = new Player(" P ", 'A', gun);
 		return player;
 	}
 
 	private Enemy createEnemy() {
-		Projectile gun = new Projectile(2, 1);
+		Projectile gun = new Projectile(2, 1, "1");
 		Enemy player = new Enemy(" E ", 'C', 10, gun);
 		return player;
 	}
