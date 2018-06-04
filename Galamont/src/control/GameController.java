@@ -29,11 +29,11 @@ public class GameController {
 	public GridPane testGrid;
 
 	public void initialize() {
-		menuSong = new Media(new File("bin\\assets\\First Level Song.mp3").toURI().toString());
+		menuSong = new Media(new File("bin\\assets\\TitleSong.mp3").toURI().toString());
 		mP = new MediaPlayer(menuSong);
 		newGame();
 		mP.setVolume(.5);
-		mP.play();
+		// mP.play();
 	}
 
 	public void moveLeftButtonClicked() {
