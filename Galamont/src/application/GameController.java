@@ -12,17 +12,13 @@ import models.Projectile;
 
 public class GameController {
 	GameModels[][] map;
-	GameModels player;
-	GameModels freeSpace;
-	GameModels enemies;
+	Player player;
+	EmptyTile freeSpace;
+	Enemy enemies;
 	Label label;
 	
 
 	public GridPane testGrid;
-
-	public void mapButtonClicked() {
-		newGame();
-	}
 
 	public void moveLeftButtonClicked() {
 		Node node = testGrid.getChildren().get(0);
@@ -44,7 +40,11 @@ public class GameController {
 
 	}
 
-	private void newGame() {
+	public void newGame() {
+		Node node = testGrid.getChildren().get(0);
+		testGrid.getChildren().clear();
+		testGrid.getChildren().add(0, node);
+		
 		player = createPlayer();
 		enemies = createEnemy();
 		map = createGrid();
