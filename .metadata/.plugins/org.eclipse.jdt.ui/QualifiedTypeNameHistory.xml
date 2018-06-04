@@ -10,4 +10,6 @@
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
 <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+<fullyQualifiedTypeName name="application.GameController"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.GridPane"/>
 </qualifiedTypeNameHistroy>
