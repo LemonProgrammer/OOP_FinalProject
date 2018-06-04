@@ -1,6 +1,7 @@
 package control;
 
 import java.io.File;
+import java.util.Random;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -22,15 +23,17 @@ public class GameController {
 	GameModels projectile;
 	GameModels enemies;
 	Label label;
-	Media menuSong = new Media(new File("bin\\assets\\TitleSong.mp3").toURI().toString());
-	MediaPlayer mP = new MediaPlayer(menuSong);
+	Media menuSong;
+	MediaPlayer mP;
 
 	public GridPane testGrid;
 
 	public void initialize() {
+		menuSong = new Media(new File("bin\\assets\\TitleSong.mp3").toURI().toString());
+		mP = new MediaPlayer(menuSong);
 		newGame();
 		mP.setVolume(.5);
-		mP.play();
+		// mP.play();
 	}
 
 	public void moveLeftButtonClicked() {
@@ -52,6 +55,11 @@ public class GameController {
 	}
 
 	public void shootButtonClicked() {
+		menuSong = new Media(
+				new File("bin\\assets\\Another Damage,DeathNoise(Careful Very Loud).wav").toURI().toString());
+		MediaPlayer mP = new MediaPlayer(menuSong);
+		mP.setVolume(.5);
+		mP.play();
 		Node node = testGrid.getChildren().get(0);
 		testGrid.getChildren().clear();
 		testGrid.getChildren().add(0, node);
@@ -112,12 +120,54 @@ public class GameController {
 				if (map[i][c].equals(player)) {
 					image = new Image("assets/CharacterIdle.png");
 					testGrid.add(new ImageView(image), c, i);
-				} else {
-					label = new Label(map[i][c].getName());
-					testGrid.add(label, c, i);
+
+				} else if (map[i][c].toString() == " E ") {
+					image = new Image(setEnemyImage());
+					testGrid.add(new ImageView(image), c, i);
+
+				} else if (map[i][c].toString() == " O ") {
+					image = new Image(setBulletImage());
+					testGrid.add(new ImageView(image), c, i);
 				}
 			}
 		}
+	}
+
+	private String setBulletImage() {
+		Random rand = new Random();
+		int decider = rand.nextInt(3);
+		String res = null;
+		switch (decider + 1) {
+		case 1:
+			res = "assets/HexShot(C1).png";
+			break;
+		case 2:
+			res = "assets/HexShot(E9).png";
+			break;
+		case 3:
+			res = "assets/HexShot(F2).png";
+			break;
+		}
+		return res;
+	}
+
+	private String setEnemyImage() {
+		Random rand = new Random();
+		int decider = rand.nextInt(3);
+		String res = "assets/Java.png";
+		switch (decider + 1) {
+		case 1:
+			res = "assets/Java.png";
+			break;
+		case 2:
+			// res = "assets/bugIdle1(armored).png";
+			break;
+		case 3:
+			// res = "assets/CorruptedData.png";
+			break;
+		}
+
+		return res;
 	}
 
 	private GameModels[][] moveLeft() {
@@ -161,6 +211,10 @@ public class GameController {
 						map[0][c] = freeSpace;
 					} else {
 						if (map[i - 1][c].toString() == " E ") {
+							menuSong = new Media(new File("bin\\assets\\Hit_Hurt.wav").toURI().toString());
+							MediaPlayer mP = new MediaPlayer(menuSong);
+							mP.setVolume(.5);
+							mP.play();
 							map[i - 1][c] = freeSpace;
 							map[i][c] = freeSpace;
 						} else {
