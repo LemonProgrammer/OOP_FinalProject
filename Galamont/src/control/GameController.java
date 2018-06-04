@@ -160,10 +160,10 @@ public class GameController {
 			res = "assets/Java.png";
 			break;
 		case 2:
-			// res = "assets/bugIdle1(armored).png";
+			res = "assets/bugIdle1(armored).png";
 			break;
 		case 3:
-			// res = "assets/CorruptedData.png";
+			res = "assets/CorruptedData.png";
 			break;
 		}
 
