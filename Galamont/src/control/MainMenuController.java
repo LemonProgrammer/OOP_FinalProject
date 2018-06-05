@@ -15,16 +15,16 @@ public class MainMenuController {
 	@FXML
 	Button startButton;
 
-	Media menuSong = new Media(new File("bin\\assets\\TitleSong.mp3").toURI().toString());
-	MediaPlayer mP = new MediaPlayer(menuSong);
+	//Media menuSong = new Media(new File("bin\\assets\\TitleSong.mp3").toURI().toString());
+	//MediaPlayer mP = new MediaPlayer(menuSong);
 
 	public void initialize() {
 		// mP.play();
 	}
 
 	public void startButtonClicked() {
-		// Scene scene = startButton.getScene();
-		// Window window = scene.getWindow();
+		//Scene scene = startButton.getScene();
+		//Window window = scene.getWindow();
 		try {
 			FXMLLoader loader = FXMLLoader.load(getClass().getResource("control/GameScene.fxml"));
 			Stage stage = (Stage) startButton.getScene().getWindow();
