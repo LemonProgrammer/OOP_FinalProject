@@ -40,6 +40,8 @@ public class GameController {
 		Node node = testGrid.getChildren().get(0);
 		testGrid.getChildren().clear();
 		testGrid.getChildren().add(0, node);
+		spawnEnemy();
+		moveEnemy();
 		moveBullet();
 		moveLeft();
 		printGrid();
@@ -49,6 +51,8 @@ public class GameController {
 		Node node = testGrid.getChildren().get(0);
 		testGrid.getChildren().clear();
 		testGrid.getChildren().add(0, node);
+		spawnEnemy();
+		moveEnemy();
 		moveBullet();
 		moveRight();
 		printGrid();
@@ -63,6 +67,8 @@ public class GameController {
 		Node node = testGrid.getChildren().get(0);
 		testGrid.getChildren().clear();
 		testGrid.getChildren().add(0, node);
+		spawnEnemy();
+		moveEnemy();
 		shoot();
 		moveBullet();
 		printGrid();
@@ -72,6 +78,7 @@ public class GameController {
 		player = createPlayer();
 		enemies = createEnemy();
 		map = createGrid();
+		spawnEnemy();
 		printGrid();
 
 	}
@@ -91,23 +98,15 @@ public class GameController {
 	private GameModels[][] createGrid() {
 		map = new GameModels[20][13];
 		freeSpace = new EmptyTile();
-		int enemyMax = 11;
-		int enemyMin = 1;
 		for (int i = 0; i < map.length; i++) {
 
 			for (int c = 0; c < map[i].length; c++) {
 				if (i == map.length - 1) {
 					map[i][map[i].length / 2] = player;
 					map[i][c] = freeSpace;
-				} else if (c > enemyMin && c < enemyMax) {
-					map[i][c] = enemies;
 				} else {
 					map[i][c] = freeSpace;
 				}
-			}
-			if (i % 2 == 0) {
-				enemyMax -= 1;
-				enemyMin += 1;
 			}
 		}
 		return map;
@@ -122,8 +121,9 @@ public class GameController {
 					testGrid.add(new ImageView(image), c, i);
 
 				} else if (map[i][c].toString() == " E ") {
+					Label labe = new Label(" E ");
 					image = new Image(setEnemyImage());
-					testGrid.add(new ImageView(image), c, i);
+					testGrid.add(labe, c, i);
 
 				} else if (map[i][c].toString() == " O ") {
 					image = new Image(setBulletImage());
@@ -233,6 +233,89 @@ public class GameController {
 			for (int c = 0; c < map[i].length; c++) {
 				if (map[i][c].equals(player)) {
 					map[i - 1][c] = projectile;
+				}
+			}
+		}
+	}
+
+	private void spawnEnemy() {
+		Random rand = new Random();
+		int spawningChance = rand.nextInt(5);
+		if (spawningChance == 1) {
+			int spawnIndex = rand.nextInt(12);
+			map[0][spawnIndex] = enemies;
+		}
+	}
+
+	private void moveEnemy() {
+		Random rand = new Random();
+		int movementDecider = rand.nextInt(3);
+		switch (movementDecider + 1) {
+		case 1:
+			System.out.println("this being called?S");
+			emenyLeft();
+			break;
+		case 2:
+			enemyRight();
+			break;
+		case 3:
+			enemyDown();
+			break;
+		}
+	}
+
+	private void emenyLeft() {
+		for (int i = 0; i < map.length; i++) {
+			for (int c = 0; c < map[i].length; c++) {
+				if (map[i][c].toString() == " E ") {
+					if (map[i][c] == map[i][0]) {
+						break;
+					} else {
+						map[i][c - 1] = enemies;
+						map[i][c] = freeSpace;
+					}
+				}
+			}
+		}
+	}
+
+	private void enemyRight() {
+		for (int i = 0; i < map.length; i++) {
+			for (int c = map[i].length - 1; c > -1; c--) {
+				if (map[i][c].toString() == " E ") {
+					if (map[i][c] == map[i][map[i].length - 1]) {
+						break;
+					} else {
+						map[i][c + 1] = enemies;
+						map[i][c] = freeSpace;
+					}
+				}
+				if (map[map.length - 1][c].toString() == " E ") {
+					map[i][c] = freeSpace;
+				}
+			}
+		}
+	}
+
+	private void enemyDown() {
+		for (int i = map.length - 1; i > -1; i--) {
+			for (int c = 0; c < map[i].length; c++) {
+				if (map[i][c].toString() == " E ") {
+					if (map[map.length - 1][c].toString() == " E ") {
+						map[0][c] = freeSpace;
+					} else {
+						if (map[i + 1][c].toString() == " O ") {
+							menuSong = new Media(new File("bin\\assets\\Hit_Hurt.wav").toURI().toString());
+							MediaPlayer mP = new MediaPlayer(menuSong);
+							mP.setVolume(.5);
+							mP.play();
+							map[i + 1][c] = enemies;
+							map[i][c] = enemies;
+						} else {
+							map[i][c] = freeSpace;
+							map[i + 1][c] = enemies;
+						}
+					}
 				}
 			}
 		}
