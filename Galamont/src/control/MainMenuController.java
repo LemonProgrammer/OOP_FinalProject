@@ -36,10 +36,10 @@ public class MainMenuController
 
 	public void startButtonClicked()
 	{
-		// Scene scene = startButton.getScene();
-		// Window window = scene.getWindow();
-		// String path = ;
-		// GameController gc = new GameController();
+		//Scene scene = startButton.getScene();
+		//Window window = scene.getWindow();
+		//String path = ;
+		//GameController gc = new GameController();
 		try
 		{
 
