@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+<<<<<<< HEAD
+		<item value="C:\Users\Fernando\Documents\GitHub\OOP_FinalProject\Galamont"/>
+	</list>
+=======
 		<item value="C:\Users\Fernando\Downloads\OOP_FinalProject-ChristianBranch\OOP_FinalProject-ChristianBranch\Galamont"/>
 	</list>
 	<section name="WORKBENCH_SETTINGS">
@@ -14,4 +18,5 @@
 		<item value="618" key="DIALOG_X_ORIGIN"/>
 		<item value="261" key="DIALOG_Y_ORIGIN"/>
 	</section>
+>>>>>>> FernandoBranch
 </section>
