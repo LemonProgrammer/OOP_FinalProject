@@ -23,8 +23,11 @@ public class MainMenuController {
 	}
 
 	public void startButtonClicked() {
-		//Scene scene = startButton.getScene();
-		//Window window = scene.getWindow();
+
+	Label l2= new Label();
+	 Image image = new Image(getClass().getResourceAsStream("START.png"));
+    l2.setGraphic(new ImageView(image));
+
 		try {
 			FXMLLoader loader = FXMLLoader.load(getClass().getResource("control/GameScene.fxml"));
 			Stage stage = (Stage) startButton.getScene().getWindow();
@@ -35,6 +38,5 @@ public class MainMenuController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 }

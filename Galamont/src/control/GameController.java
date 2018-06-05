@@ -18,16 +18,24 @@ import models.Projectile;
 
 public class GameController {
 	GameModels[][] map;
+<<<<<<< HEAD:Galamont/src/application/GameController.java
+	Player player;
+	EmptyTile freeSpace;
+	Enemy enemies;
+=======
 	GameModels player;
 	GameModels freeSpace;
 	GameModels projectile;
 	GameModels enemies;
+>>>>>>> ChristianBranch:Galamont/src/control/GameController.java
 	Label label;
 	Media menuSong;
 	MediaPlayer mP;
 
 	public GridPane testGrid;
 
+<<<<<<< HEAD:Galamont/src/application/GameController.java
+=======
 	public void initialize() {
 		menuSong = new Media(new File("bin\\assets\\First Level Song.mp3").toURI().toString());
 		mP = new MediaPlayer(menuSong);
@@ -36,6 +44,7 @@ public class GameController {
 		mP.play();
 	}
 
+>>>>>>> ChristianBranch:Galamont/src/control/GameController.java
 	public void moveLeftButtonClicked() {
 		Node node = testGrid.getChildren().get(0);
 		testGrid.getChildren().clear();
@@ -74,7 +83,11 @@ public class GameController {
 		printGrid();
 	}
 
-	private void newGame() {
+	public void newGame() {
+		Node node = testGrid.getChildren().get(0);
+		testGrid.getChildren().clear();
+		testGrid.getChildren().add(0, node);
+		
 		player = createPlayer();
 		enemies = createEnemy();
 		map = createGrid();
@@ -84,13 +97,13 @@ public class GameController {
 	}
 
 	private Player createPlayer() {
-		Projectile gun = new Projectile(2, 1);
+		Projectile gun = new Projectile(2, 1, "O");
 		Player player = new Player(" P ", 'A', gun);
 		return player;
 	}
 
 	private Enemy createEnemy() {
-		Projectile gun = new Projectile(2, 1);
+		Projectile gun = new Projectile(2, 1, "1");
 		Enemy player = new Enemy(" E ", 'C', 10, gun);
 		return player;
 	}
