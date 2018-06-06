@@ -21,6 +21,7 @@ public class GameController {
 	GameModels player;
 	GameModels freeSpace;
 	GameModels projectile;
+	GameModels enemyProjectile;
 	GameModels enemies;
 	Label label;
 	Media menuSong;
@@ -127,6 +128,9 @@ public class GameController {
 				} else if (map[i][c].toString() == " O ") {
 					image = new Image(setBulletImage());
 					testGrid.add(new ImageView(image), c, i);
+				} else if (map[i][c].toString() == " EO ") {
+					Label labe = new Label(map[i][c].toString());
+					testGrid.add(labe, c, i);
 				}
 			}
 		}
@@ -309,8 +313,8 @@ public class GameController {
 							MediaPlayer mP = new MediaPlayer(menuSong);
 							mP.setVolume(.5);
 							mP.play();
-							map[i + 1][c] = enemies;
-							map[i][c] = enemies;
+							map[i + 1][c] = freeSpace;
+							map[i][c] = freeSpace;
 						} else {
 							map[i][c] = freeSpace;
 							map[i + 1][c] = enemies;
@@ -320,4 +324,5 @@ public class GameController {
 			}
 		}
 	}
+
 }

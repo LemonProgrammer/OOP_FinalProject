@@ -6,7 +6,6 @@ public class Enemy extends Attackers {
 	private int dropChance;
 	private boolean isDropping;
 
-	
 	public int getPointVal() {
 		return pointVal;
 	}
