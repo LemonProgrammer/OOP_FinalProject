@@ -1,10 +1,10 @@
 package models;
 
-<<<<<<< HEAD
-public class Attackers extends GameModels {
-=======
+//<<<<<<< HEAD
+//public class Attackers extends GameModels {
+//=======
 public class Attackers extends GameModel {
->>>>>>> FernandoBranch
+//>>>>>>> FernandoBranch
 	private int damage;
 	private char lives;
 	private int armor;
