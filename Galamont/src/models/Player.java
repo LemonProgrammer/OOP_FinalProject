@@ -1,5 +1,7 @@
 package models;
 
+import javafx.application.Platform;
+
 public class Player extends Attackers implements Killable {
 	private int score;
 	private int coins;
@@ -33,6 +35,7 @@ public class Player extends Attackers implements Killable {
 		this.setLives((char) (getLives()+1));
 		if(this.getLives()>005) {
 			System.out.println("The Game is Over");
+			Platform.exit();
 		}
 	}
 	public Player(String name, char lives, Projectile gun) {
