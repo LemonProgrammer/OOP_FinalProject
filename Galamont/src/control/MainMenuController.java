@@ -64,15 +64,15 @@ public class MainMenuController
 
 	public void initialize()
 	{
-		File testFile = new File("bin\\assets\\TitleSong.mp3");
-		if (testFile.exists())
-		{
-			System.out.println("I exist!");
-		}
-		String path = testFile.toURI().toString();
-		Media menuSong = new Media(path);
-		MediaPlayer mP = new MediaPlayer(menuSong);
-		mP.play();
+//		File testFile = new File("bin\\assets\\TitleSong.mp3");
+//		if (testFile.exists())
+//		{
+//			System.out.println("I exist!");
+//		}
+//		String path = testFile.toURI().toString();
+//		Media menuSong = new Media(path);
+//		MediaPlayer mP = new MediaPlayer(menuSong);
+//		mP.play();
 	}
 
 	public void startButtonClicked()
@@ -82,7 +82,7 @@ public class MainMenuController
 		//String path = ;
 		//GameController gc = new GameController();
 		Label l2= new Label();
-		 Image image = new Image(getClass().getResourceAsStream("START.png"));
+		 Image image = new Image(getClass().getClassLoader().getResourceAsStream("assets/START.png"));
 	    l2.setGraphic(new ImageView(image));
 		try
 		{
@@ -90,7 +90,7 @@ public class MainMenuController
 			AnchorPane loader = new AnchorPane();
 			loader = FXMLLoader.load(getClass().getClassLoader().getResource("application/Resource/GameScene.fxml"));
 			Scene scene = new Scene(loader);
-			Stage stage = (Stage) startButton.getScene().getWindow();
+			Stage stage = new Stage();//(Stage) scene.getWindow();//startButton.getScene().getWindow();
 			stage.setScene(scene);
 			stage.show();
 		} catch (IOException e)
