@@ -2,6 +2,7 @@ package models;
 
 public class GameModels {
 	private String name;
+	private String displayValue;
 
 	public String getName() {
 		return name;
@@ -13,6 +14,13 @@ public class GameModels {
 
 	public GameModels(String name) {
 		setName(name);
+	}
+	public String getDisplayValue() {
+		return displayValue;
+	}
+	
+	public void setDisplayValue(String displayValue) {
+		this.displayValue = displayValue;
 	}
 
 	@Override

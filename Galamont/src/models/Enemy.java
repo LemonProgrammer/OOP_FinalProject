@@ -6,6 +6,7 @@ public class Enemy extends Attackers {
 	private int dropChance;
 	private boolean isDropping;
 
+	
 	public int getPointVal() {
 		return pointVal;
 	}
@@ -30,10 +31,11 @@ public class Enemy extends Attackers {
 		this.isDropping = isDropping;
 	}
 
-	public Enemy(String name, int pointVal, int dropChance, Projectile gun) {
+	public Enemy(String name, int pointVal, int dropChance, Projectile gun, String displayValue) {
 		super(name);
 		setPointVal(pointVal);
 		setDropChance(dropChance);
 		setGun(gun);
+		this.setDisplayValue(displayValue);
 	}
 }

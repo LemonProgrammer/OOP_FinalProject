@@ -76,7 +76,7 @@ public class GameController {
 
 	private void newGame() {
 		player = createPlayer();
-		enemies = createEnemy();
+		enemies = createEnemy(setEnemyImage());
 		map = createGrid();
 		spawnEnemy();
 		printGrid();
@@ -89,9 +89,9 @@ public class GameController {
 		return player;
 	}
 
-	private Enemy createEnemy() {
+	private Enemy createEnemy(String enemyImage) {
 		Projectile gun = new Projectile(2, 1);
-		Enemy player = new Enemy(" E ", 'C', 10, gun);
+		Enemy player = new Enemy(" E ", 'C', 10, gun, enemyImage);
 		return player;
 	}
 
@@ -121,9 +121,8 @@ public class GameController {
 					testGrid.add(new ImageView(image), c, i);
 
 				} else if (map[i][c].toString() == " E ") {
-					Label labe = new Label(" E ");
-					image = new Image(setEnemyImage());
-					testGrid.add(labe, c, i);
+					image = new Image(map[i][c].getDisplayValue());
+					testGrid.add(new ImageView(image), c, i);
 
 				} else if (map[i][c].toString() == " O ") {
 					image = new Image(setBulletImage());
@@ -242,8 +241,9 @@ public class GameController {
 		Random rand = new Random();
 		int spawningChance = rand.nextInt(5);
 		if (spawningChance == 1) {
+			String enemyImage = setEnemyImage();
 			int spawnIndex = rand.nextInt(12);
-			map[0][spawnIndex] = enemies;
+			map[0][spawnIndex] = createEnemy(enemyImage);
 		}
 	}
 
