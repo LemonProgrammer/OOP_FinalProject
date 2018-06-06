@@ -1,6 +1,6 @@
 package models;
 
-public class Enemy extends Attackers {
+public class Enemy extends Attackers implements Killable{
 
 	private int pointVal;
 	private int dropChance;
@@ -37,5 +37,11 @@ public class Enemy extends Attackers {
 		setDropChance(dropChance);
 		setGun(gun);
 		this.setDisplayValue(displayValue);
+	}
+
+	@Override
+	public void IDie() {
+		System.out.println("The Enemy Has Died");
+		
 	}
 }
