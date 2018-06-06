@@ -4,8 +4,8 @@ import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -18,11 +18,10 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		Parent Root;
 		try {
-			Root = FXMLLoader.load(getClass().getResource("GameScene.fxml"));
-			primaryStage.setTitle("Hey");
-			primaryStage.setScene(new Scene(Root, 1000, 800));
+			AnchorPane Root = FXMLLoader.load(getClass().getClassLoader().getResource("application/Mainmenu.fxml"));
+			primaryStage.setTitle("Main Menu");
+			primaryStage.setScene(new Scene(Root, 630, 425));
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();

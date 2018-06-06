@@ -30,6 +30,7 @@ public class GameController {
 	public GridPane testGrid;
 
 	public void initialize() {
+
 		menuSong = new Media(new File("bin\\assets\\First Level Song.mp3").toURI().toString());
 		mP = new MediaPlayer(menuSong);
 		newGame();
@@ -81,7 +82,9 @@ public class GameController {
 		map = createGrid();
 		spawnEnemy();
 		printGrid();
-
+		// Node node = testGrid.getChildren().get(0);
+		// testGrid.getChildren().clear();
+		// testGrid.getChildren().add(0, node);
 	}
 
 	private Player createPlayer() {
@@ -103,6 +106,7 @@ public class GameController {
 
 			for (int c = 0; c < map[i].length; c++) {
 				if (i == map.length - 1) {
+					// map[i][map[i].length / 2] = freeSpace;
 					map[i][map[i].length / 2] = player;
 					map[i][c] = freeSpace;
 				} else {
@@ -115,19 +119,32 @@ public class GameController {
 
 	private void printGrid() {
 		Image image;
+		ImageView iv;
 		for (int i = 0; i < map.length; i++) {
 			for (int c = 0; c < map[i].length; c++) {
 				if (map[i][c].equals(player)) {
 					image = new Image("assets/CharacterIdle.png");
-					testGrid.add(new ImageView(image), c, i);
+					iv = new ImageView(image);
+					iv.setFitHeight(25);
+					iv.setFitWidth(25);
+					testGrid.add(iv, c, i);
+					// iv.setCache(true);
+					// Label s = new Label(player.getName());
+					// testGrid.add(s, c, i);
 
 				} else if (map[i][c].toString() == " E ") {
 					image = new Image(map[i][c].getDisplayValue());
-					testGrid.add(new ImageView(image), c, i);
+					iv = new ImageView(image);
+					iv.setFitHeight(40);
+					iv.setFitWidth(40);
+					testGrid.add(iv, c, i);
 
 				} else if (map[i][c].toString() == " O ") {
 					image = new Image(setBulletImage());
-					testGrid.add(new ImageView(image), c, i);
+					iv = new ImageView(image);
+					iv.setFitHeight(25);
+					iv.setFitWidth(25);
+					testGrid.add(iv, c, i);
 				} else if (map[i][c].toString() == " EO ") {
 					Label labe = new Label(map[i][c].toString());
 					testGrid.add(labe, c, i);
