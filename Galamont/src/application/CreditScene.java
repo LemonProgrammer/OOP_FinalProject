@@ -26,7 +26,7 @@ public class CreditScene extends Application {
 	            vbox.getChildren().add(new Text("*************************************"));
 
 	        for (int i = 0; i < 1; i++)
-	            vbox.getChildren().add(new Text("Thanks to everyone who helped in the creation of Neumont Galga"));
+	            vbox.getChildren().add(new Text("Thanks to everyone who helped in the creation of Galmont"));
 	    
 	        for (int i = 0; i < 1; i++)
 	            vbox.getChildren().add(new Text("TEAM LEAD---> FERNANDO BLANCO "));
@@ -63,7 +63,7 @@ public class CreditScene extends Application {
 	        for (int i = 0; i < 1; i++)
 	            vbox.getChildren().add(new Text("*************************************"));
 	        for (int i = 0; i < 1; i++)
-	            vbox.getChildren().add(new Text("AND OF COURSE THANKS TO SUPREME CHANCOLLOR KREBS"));
+	            vbox.getChildren().add(new Text("AND OF COURSE THANKS TO SUPREME CHANCELOR KREBS"));
 	        for (int i = 0; i < 1; i++)
 	            vbox.getChildren().add(new Text("*************************************"));
 
