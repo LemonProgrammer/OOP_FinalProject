@@ -22,7 +22,6 @@ public class GameModels {
 	public void setDisplayValue(String displayValue) {
 		this.displayValue = displayValue;
 	}
-
 	@Override
 	public String toString() {
 		String res = getName();
