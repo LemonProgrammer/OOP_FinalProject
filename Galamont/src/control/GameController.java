@@ -256,7 +256,6 @@ public class GameController {
 		int movementDecider = rand.nextInt(3);
 		switch (movementDecider + 1) {
 		case 1:
-			System.out.println("this being called?S");
 			emenyLeft();
 			break;
 		case 2:
@@ -274,6 +273,9 @@ public class GameController {
 				if (map[i][c].toString() == " E ") {
 					if (map[i][c] == map[i][0]) {
 						break;
+					} else if (map[i][c - 1].equals(player)) {
+						map[i][c] = freeSpace;
+						map[i][c - 1] = player;
 					} else {
 						map[i][c - 1] = enemies;
 						map[i][c] = freeSpace;
@@ -289,13 +291,13 @@ public class GameController {
 				if (map[i][c].toString() == " E ") {
 					if (map[i][c] == map[i][map[i].length - 1]) {
 						break;
+					} else if (map[i][c + 1].equals(player)) {
+						map[i][c] = freeSpace;
+						map[i][c + 1] = player;
 					} else {
 						map[i][c + 1] = enemies;
 						map[i][c] = freeSpace;
 					}
-				}
-				if (map[map.length - 1][c].toString() == " E ") {
-					map[i][c] = freeSpace;
 				}
 			}
 		}
@@ -305,19 +307,32 @@ public class GameController {
 		for (int i = map.length - 1; i > -1; i--) {
 			for (int c = 0; c < map[i].length; c++) {
 				if (map[i][c].toString() == " E ") {
-					if (map[map.length - 1][c].toString() == " E ") {
-						map[0][c] = freeSpace;
+					if (map[map.length - 1][c].equals(player)) {
+						map[i][c] = freeSpace;
+						map[map.length - 1][c] = player;
+						break;
+
 					} else {
-						if (map[i + 1][c].toString() == " O ") {
-							menuSong = new Media(new File("bin\\assets\\Hit_Hurt.wav").toURI().toString());
-							MediaPlayer mP = new MediaPlayer(menuSong);
-							mP.setVolume(.5);
-							mP.play();
-							map[i + 1][c] = freeSpace;
+						if (i == map.length - 1) {
 							map[i][c] = freeSpace;
+							break;
 						} else {
-							map[i][c] = freeSpace;
-							map[i + 1][c] = enemies;
+							if (map[map.length - 1][c].equals(player)) {
+								map[i][c] = freeSpace;
+								map[map.length - 1][c] = player;
+								break;
+
+							} else if (map[i + 1][c].toString() == " O ") {
+								menuSong = new Media(new File("bin\\assets\\Hit_Hurt.wav").toURI().toString());
+								MediaPlayer mP = new MediaPlayer(menuSong);
+								mP.setVolume(.5);
+								mP.play();
+								map[i + 1][c] = freeSpace;
+								map[i][c] = freeSpace;
+							} else {
+								map[i][c] = freeSpace;
+								map[i + 1][c] = enemies;
+							}
 						}
 					}
 				}
